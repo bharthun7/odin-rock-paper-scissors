@@ -30,4 +30,29 @@ function playGame() {
       computerScore++;
     }
   }
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  playRound(getHumanChoice(), getComputerChoice());
+  if (humanScore === computerScore) {
+    console.log(
+      `It's a tie! Final scores:\n  Player: ${humanScore}\n  Computer: ${computerScore}\n  Ties: ${
+        5 - humanScore - computerScore
+      }`
+    );
+  } else if (humanScore > computerScore) {
+    console.log(
+      `Player wins! Final scores:\n  Player: ${humanScore}\n  Computer: ${computerScore}\n  Ties: ${
+        5 - humanScore - computerScore
+      }`
+    );
+  } else {
+    console.log(
+      `Computer wins! Final scores:\n  Player: ${humanScore}\n  Computer: ${computerScore}\n  Ties: ${
+        5 - humanScore - computerScore
+      }`
+    );
+  }
 }
+playGame();
