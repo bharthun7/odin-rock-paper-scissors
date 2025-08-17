@@ -12,6 +12,7 @@ function playRound(humanChoice, computerChoice) {
   let msg = document.querySelector(".message");
   if (humanChoice === computerChoice) {
     msg.textContent = `It's a tie! Both picked ${humanChoice}!`;
+    ties++;
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "scissors" && computerChoice === "paper") ||
