@@ -32,12 +32,22 @@ function playRound(humanChoice, computerChoice) {
     ".computer"
   ).textContent = `Computer Score: ${computerScore}`;
   document.querySelector(".ties").textContent = `Ties: ${ties}`;
-  /*
-  if(computerScore+humanScore+ties==5){
-    gameOver=true;
-    if 
+  if (computerScore + humanScore + ties == 5) {
+    gameOver = true;
+    if (humanScore === computerScore) {
+      msg.textContent = `It's a tie! Final scores:\n  Player: ${humanScore}\n  Computer: ${computerScore}\n  Ties: ${
+        5 - humanScore - computerScore
+      }`;
+    } else if (humanScore > computerScore) {
+      msg.textContent = `Player wins! Final scores:\n  Player: ${humanScore}\n  Computer: ${computerScore}\n  Ties: ${
+        5 - humanScore - computerScore
+      }`;
+    } else {
+      msg.textContent = `Computer wins! Final scores:\n  Player: ${humanScore}\n  Computer: ${computerScore}\n  Ties: ${
+        5 - humanScore - computerScore
+      }`;
+    }
   }
-    */
 }
 let humanScore = 0;
 let computerScore = 0;
