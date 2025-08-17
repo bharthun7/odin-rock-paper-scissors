@@ -30,6 +30,7 @@ function playGame() {
       computerScore++;
     }
   }
+  /*
   playRound(getHumanChoice(), getComputerChoice());
   playRound(getHumanChoice(), getComputerChoice());
   playRound(getHumanChoice(), getComputerChoice());
@@ -54,5 +55,6 @@ function playGame() {
       }`
     );
   }
+  */
 }
-playGame();
+//playGame();
