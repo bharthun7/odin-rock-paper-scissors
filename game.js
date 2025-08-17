@@ -8,29 +8,39 @@ function getComputerChoice() {
     return "scissors";
   }
 }
-function getHumanChoice() {
-  return prompt("Pick rock, paper, or scissors: ");
-}
-function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
-  function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    if (humanChoice === computerChoice) {
-      console.log(`It's a tie! Both picked ${humanChoice}!`);
-    } else if (
-      (humanChoice === "rock" && computerChoice === "scissors") ||
-      (humanChoice === "scissors" && computerChoice === "paper") ||
-      (humanChoice === "paper" && computerChoice === "rock")
-    ) {
-      console.log(`Player wins! ${humanChoice} beats ${computerChoice}!`);
-      humanScore++;
-    } else {
-      console.log(`Computer wins! ${computerChoice} beats ${humanChoice}!`);
-      computerScore++;
-    }
+function playRound(humanChoice, computerChoice) {
+  let msg=document.querySelector(".message");
+  if (humanChoice === computerChoice) {
+    msg.textContent=`It's a tie! Both picked ${humanChoice}!`;
+  } else if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "rock")
+  ) {
+    msg.textContent=
+      `Player wins! ${
+        humanChoice.at(0).toUpperCase() + humanChoice.slice(1)
+      } beats ${computerChoice}!`
+    ;
+    humanScore++;
+  } else {
+    msg.textContent=
+      `Computer wins! ${
+        computerChoice.at(0).toUpperCase() + computerChoice.slice(1)
+      } beats ${humanChoice}!`
+    ;
+    computerScore++;
   }
-  /*
+}
+let humanScore = 0;
+let computerScore = 0;
+let ties = 0;
+let btns = document.querySelector(".buttons");
+btns.addEventListener("click", (e) => {
+  playRound(e.target.className, getComputerChoice());
+});
+
+/*
   playRound(getHumanChoice(), getComputerChoice());
   playRound(getHumanChoice(), getComputerChoice());
   playRound(getHumanChoice(), getComputerChoice());
@@ -56,5 +66,5 @@ function playGame() {
     );
   }
   */
-}
+
 //playGame();
